@@ -38,7 +38,7 @@ const projects = [
     ],
     impact: "Demonstrates clean backend + frontend integration with Django.",
     links: {
-      github: "https://github.com/Sohitha-Kommineni/Auth-Identity-Service.git"
+      github: "https://github.com/Sohitha-Kommineni/Streaming-Platform.git"
     }
   },
   {
@@ -79,7 +79,7 @@ const skills = [
   },
   {
     category: "DevOps/Cloud",
-    items: ["AWS (EC2, S3, Lambda)", "Docker", "GitHub Actions"]
+    items: ["AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "GitHub Actions"]
   }
 ];
 
@@ -110,7 +110,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-ink text-white">
-      <div className="pointer-events-none fixed inset-0 z-0 particle-field opacity-60 mix-blend-screen" />
+      <div className="pointer-events-none fixed inset-0 z-0 particle-nodes opacity-70 mix-blend-screen" />
       <div className="pointer-events-none fixed inset-0 z-0 gradient-ring opacity-40" />
       <div className="pointer-events-none fixed inset-0 z-0 pulse-orbs opacity-35" />
       <div className="relative z-10">

@@ -49,7 +49,7 @@ body {
   animation-delay: -6s;
 }
 
-.particle-field {
+.particle-nodes {
   position: relative;
   overflow: hidden;
   background-image: radial-gradient(rgba(45, 212, 191, 0.4) 2px, transparent 2px),
@@ -60,7 +60,7 @@ body {
   animation: drift 30s linear infinite;
 }
 
-.particle-field::before {
+.particle-nodes::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -68,6 +68,28 @@ body {
   background-size: 160px 160px;
   animation: drift 45s linear infinite reverse;
   opacity: 0.85;
+}
+
+.particle-nodes::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.2) 45%,
+      transparent 55%
+    ),
+    linear-gradient(
+      60deg,
+      transparent 0%,
+      rgba(167, 139, 250, 0.18) 40%,
+      transparent 60%
+    );
+  background-size: 260px 260px, 320px 320px;
+  background-position: 0 0, 120px 180px;
+  animation: drift-lines 28s linear infinite;
+  opacity: 0.5;
 }
 
 @keyframes float {
@@ -86,5 +108,14 @@ body {
   }
   100% {
     background-position: 320px 220px, -260px 300px, 180px -240px;
+  }
+}
+
+@keyframes drift-lines {
+  0% {
+    background-position: 0 0, 120px 180px;
+  }
+  100% {
+    background-position: 280px -220px, -200px 260px;
   }
 }

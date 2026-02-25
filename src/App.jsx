@@ -281,9 +281,9 @@ export default function App() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="order-first flex items-start justify-center md:order-none md:mt-4 md:justify-center"
+                className="order-first flex w-full items-start justify-center md:order-none md:mt-4 md:justify-center"
               >
-                <div className="relative h-56 w-56 overflow-hidden rounded-full border-2 border-purple-400/40 shadow-[0_0_60px_rgba(124,58,237,0.35)]">
+                <div className="relative mx-auto h-56 w-56 overflow-hidden rounded-full border-2 border-purple-400/40 shadow-[0_0_60px_rgba(124,58,237,0.35)]">
                   <img
                     src={`${import.meta.env.BASE_URL}sohitha-profile.png`}
                     alt="Sohitha Kommineni profile"

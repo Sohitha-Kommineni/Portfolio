@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const fadeUp = {
@@ -99,6 +99,7 @@ const experiences = [
 ];
 
 export default function App() {
+  const canvasRef = useRef(null);
   const heroStats = useMemo(
     () => [
       { label: "Projects completed", value: "8+" },
@@ -108,9 +109,88 @@ export default function App() {
     []
   );
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationId;
+    let width = 0;
+    let height = 0;
+
+    const setSize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * window.devicePixelRatio);
+      canvas.height = Math.floor(height * window.devicePixelRatio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+    };
+
+    const nodeCount = 60;
+    const nodes = Array.from({ length: nodeCount }).map(() => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      radius: 2 + Math.random() * 1.5
+    }));
+
+    const draw = () => {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "rgba(9, 12, 24, 0.7)";
+      ctx.fillRect(0, 0, width, height);
+
+      for (const node of nodes) {
+        node.x += node.vx;
+        node.y += node.vy;
+
+        if (node.x <= 0 || node.x >= width) node.vx *= -1;
+        if (node.y <= 0 || node.y >= height) node.vy *= -1;
+      }
+
+      for (let i = 0; i < nodes.length; i += 1) {
+        for (let j = i + 1; j < nodes.length; j += 1) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 140) {
+            const alpha = 1 - dist / 140;
+            ctx.strokeStyle = `rgba(99, 102, 241, ${0.25 * alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (const node of nodes) {
+        ctx.fillStyle = "rgba(148, 163, 184, 0.6)";
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      animationId = requestAnimationFrame(draw);
+    };
+
+    setSize();
+    window.addEventListener("resize", setSize);
+    draw();
+
+    return () => {
+      window.removeEventListener("resize", setSize);
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-ink text-white">
-      <div className="pointer-events-none fixed inset-0 z-0 particle-nodes opacity-100" />
+      <canvas ref={canvasRef} className="live-canvas" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 z-0 gradient-ring opacity-40" />
       <div className="pointer-events-none fixed inset-0 z-0 pulse-orbs opacity-35" />
       <div className="relative z-10">

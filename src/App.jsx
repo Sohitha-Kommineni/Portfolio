@@ -205,7 +205,7 @@ export default function App() {
               >
                 <div className="relative h-56 w-56 overflow-hidden rounded-full border-2 border-purple-400/40 shadow-[0_0_60px_rgba(124,58,237,0.35)]">
                   <img
-                    src="/sohitha-profile.png"
+                    src={`${import.meta.env.BASE_URL}sohitha-profile.png`}
                     alt="Sohitha Kommineni profile"
                     className="h-full w-full object-cover"
                   />
@@ -397,7 +397,7 @@ export default function App() {
                   >
                     <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                       <img
-                        src={project.image}
+                        src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, "")}`}
                         alt={`${project.name} preview`}
                         className="h-full w-full object-cover"
                       />

@@ -52,22 +52,23 @@ body {
 .particle-nodes {
   position: relative;
   overflow: hidden;
-  background-image: radial-gradient(rgba(45, 212, 191, 0.4) 2px, transparent 2px),
-    radial-gradient(rgba(59, 130, 246, 0.32) 2px, transparent 2px),
-    radial-gradient(rgba(167, 139, 250, 0.28) 2px, transparent 2px);
+  background-image: radial-gradient(rgba(45, 212, 191, 0.7) 2px, transparent 2px),
+    radial-gradient(rgba(59, 130, 246, 0.6) 2px, transparent 2px),
+    radial-gradient(rgba(167, 139, 250, 0.55) 2px, transparent 2px);
   background-size: 120px 120px, 180px 180px, 240px 240px;
   background-position: 0 0, 40px 60px, -20px 120px;
   animation: drift 30s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.4));
 }
 
 .particle-nodes::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(148, 163, 184, 0.24) 2px, transparent 2px);
-  background-size: 160px 160px;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.4) 2px, transparent 2px);
+  background-size: 150px 150px;
   animation: drift 45s linear infinite reverse;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .particle-nodes::after {
@@ -77,13 +78,13 @@ body {
   background-image: linear-gradient(
       120deg,
       transparent 0%,
-      rgba(59, 130, 246, 0.2) 45%,
+      rgba(59, 130, 246, 0.35) 45%,
       transparent 55%
     ),
     linear-gradient(
       60deg,
       transparent 0%,
-      rgba(167, 139, 250, 0.18) 40%,
+      rgba(167, 139, 250, 0.32) 40%,
       transparent 60%
     );
   background-size: 260px 260px, 320px 320px;

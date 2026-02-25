@@ -110,7 +110,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-ink text-white">
-      <div className="pointer-events-none fixed inset-0 z-0 particle-nodes opacity-70 mix-blend-screen" />
+      <div className="pointer-events-none fixed inset-0 z-0 particle-nodes opacity-100" />
       <div className="pointer-events-none fixed inset-0 z-0 gradient-ring opacity-40" />
       <div className="pointer-events-none fixed inset-0 z-0 pulse-orbs opacity-35" />
       <div className="relative z-10">

@@ -83,21 +83,6 @@ const skills = [
   }
 ];
 
-const experiences = [
-  {
-    title: "Full-Stack Developer",
-    company: "JPMorgan Chase",
-    period: "Feb 2025 - Present",
-    location: "USA"
-  },
-  {
-    title: "Associate Software Engineer",
-    company: "Wipro Limited",
-    period: "Sep 2020 - Dec 2022",
-    location: "India"
-  }
-];
-
 export default function App() {
   const canvasRef = useRef(null);
   const heroStats = useMemo(
@@ -208,9 +193,6 @@ export default function App() {
               </a>
               <a className="hover:text-white" href="#education">
                 Education
-              </a>
-              <a className="hover:text-white" href="#experience">
-                Experience
               </a>
               <a className="hover:text-white" href="#projects">
                 Projects
@@ -402,44 +384,6 @@ export default function App() {
                   </p>
                   <p className="mt-2 text-sm text-white/70">JNTUK</p>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          <section
-            id="experience"
-            className="border-t border-white/10 bg-gradient-to-br from-emerald-500/10 via-white/5 to-indigo-500/10"
-          >
-            <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={fadeUp}
-                transition={{ duration: 0.6 }}
-                className="space-y-4"
-              >
-                <h2 className="text-5xl font-semibold text-teal-200">Experience</h2>
-              </motion.div>
-              <div className="mt-8 grid gap-6 md:grid-cols-2 md:justify-items-center">
-                {experiences.map((item) => (
-                  <motion.div
-                    key={`${item.company}-${item.period}`}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={fadeUp}
-                    transition={{ duration: 0.5 }}
-                    className="glass w-full rounded-3xl p-6 text-center"
-                  >
-                    <p className="text-sm text-white/60">{item.period}</p>
-                    <p className="mt-2 text-lg font-semibold text-white">
-                      {item.title}
-                    </p>
-                    <p className="mt-2 text-sm text-white/70">{item.company}</p>
-                    <p className="mt-1 text-xs text-white/60">{item.location}</p>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </section>

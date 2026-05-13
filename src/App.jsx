@@ -62,24 +62,65 @@ const projects = [
 
 const skills = [
   {
-    category: "Frontend",
-    items: ["React", "Tailwind", "Bootstrap", "HTML/CSS"]
+    category: "Frontend Engineering",
+    items: ["React.js", "JavaScript", "HTML", "CSS"]
   },
   {
-    category: "Backend",
-    items: ["Python", "Django", "DRF", "FastAPI", "Flask"]
+    category: "Backend & API Engineering",
+    items: [
+      "Python",
+      "FastAPI",
+      "Django",
+      "Django REST Framework",
+      "Flask",
+      "REST APIs",
+      "WebSocket",
+      "Pydantic",
+      "SQLAlchemy"
+    ]
   },
   {
-    category: "AI/LLM",
-    items: ["OpenAI", "Hugging Face", "LangChain", "RAG", "Embeddings"]
+    category: "AI & Intelligent Systems",
+    items: [
+      "OpenAI",
+      "Anthropic",
+      "RAG",
+      "pgvector",
+      "Vector Search",
+      "Prompt Engineering",
+      "LLM Integration"
+    ]
   },
   {
-    category: "Databases",
-    items: ["PostgreSQL", "MySQL", "Redis", "SQLite"]
+    category: "Data & Workflow Systems",
+    items: [
+      "PostgreSQL",
+      "Snowflake",
+      "Redis",
+      "SQL",
+      "Pandas",
+      "NumPy",
+      "PySpark",
+      "Dask",
+      "Apache Airflow"
+    ]
   },
   {
-    category: "DevOps/Cloud",
-    items: ["AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "GitHub Actions"]
+    category: "Cloud, DevOps & Observability",
+    items: ["AWS", "Docker", "Jenkins", "GitHub Actions", "CI/CD", "Splunk"]
+  },
+  {
+    category: "Testing & Developer Tools",
+    items: [
+      "pytest",
+      "Postman",
+      "Swagger",
+      "Git",
+      "Jupyter Notebook",
+      "Cursor",
+      "Claude",
+      "GitHub Copilot"
+    ]
   }
 ];
 
@@ -87,9 +128,9 @@ export default function App() {
   const canvasRef = useRef(null);
   const heroStats = useMemo(
     () => [
-      { label: "Projects completed", value: "8+" },
-      { label: "AI Solutions", value: "6+" },
-      { label: "In product dev", value: "3+" }
+      { label: "IN PRODUCT DEV", value: "4+" },
+      { label: "CONCURRENT SESSIONS", value: "50+" },
+      { label: "INDEXED DATA POINTS", value: "2K+" }
     ],
     []
   );
@@ -221,14 +262,15 @@ export default function App() {
                 className="space-y-6 text-center"
               >
                 <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-                  Software Engineer & AI/Product Developer
+                  {"FULL STACK DEVELOPER · BACKEND & AI SYSTEMS"}
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
                   Sohitha Kommineni
                 </h1>
                 <p className="text-lg text-white/80">
-                  I build full-stack applications and AI-powered products from
-                  concept to deployment.
+                  I build scalable software systems that combine backend
+                  engineering, AI-powered workflows, data-driven architecture, and
+                  clean user experiences.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <a
@@ -287,18 +329,21 @@ export default function App() {
             >
               <h2 className="text-5xl font-semibold text-teal-200">About Me</h2>
               <p className="mx-auto max-w-3xl text-center text-white/70">
-                I am a Full-Stack Software Engineer specializing in designing and
-                developing robust, scalable web applications and integrating AI
-                and LLM solutions. My expertise spans backend systems with Python,
-                Django, FastAPI, and database design with PostgreSQL and MySQL, as
-                well as modern frontend development using React and Tailwind CSS.
+                I am a Full Stack Developer who builds where software is moving
+                next: AI-native, data-rich, real-time, and production-ready. My
+                work spans backend platforms, React interfaces, scalable APIs,
+                workflow engines, LLM integrations, cloud deployments, data
+                pipelines, and intelligent applications designed to turn complex
+                business logic into software that feels simple, fast, and reliable.
               </p>
               <p className="mx-auto max-w-3xl text-center text-white/70">
-                I am passionate about delivering clean, efficient, and intelligent
-                software solutions, leveraging AI technologies such as OpenAI and
-                Hugging Face to enhance functionality and automate complex
-                workflows. I focus on building products that are reliable,
-                maintainable, and aligned with real-world user needs.
+                I like solving problems that go beyond standard feature
+                development: streaming AI responses, designing clean API contracts,
+                building resilient processing pipelines, optimizing latency,
+                modeling data for scale, and creating interfaces that make
+                sophisticated systems easy to use. I bring the mindset of an
+                engineer who can understand the product, shape the architecture,
+                and ship secure, maintainable software that works in the real world.
               </p>
             </motion.div>
           </section>
@@ -318,8 +363,8 @@ export default function App() {
               >
                 <h2 className="text-5xl font-semibold text-teal-200">Skills</h2>
                 <p className="text-white/70">
-                  “A diverse toolkit for building full-stack applications and
-                  AI-powered solutions.”
+                  A production-focused toolkit for building scalable full-stack
+                  platforms, AI workflows, and data-driven systems.
                 </p>
               </motion.div>
               <div className="mt-10 grid gap-6 md:grid-cols-2 md:justify-items-center">
